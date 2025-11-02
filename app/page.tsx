@@ -29,16 +29,21 @@ const Page = () => {
 
       {data && (
         <div className="w-full max-w-md border-2 border-yellow-200 rounded-2xl p-8 shadow-lg text-center relative flex flex-col items-center">
-          <HiPencil 
-            size={27} 
-            color="white" 
+          <HiPencil
+            size={27}
+            color="white"
             className="absolute right-5 top-5 cursor-pointer m-1 rounded-full p-1 transition-all duration-200 hover:bg-yellow-900 hover:scale-110 active:scale-95 shadow-xs shadow-yellow-500"
             onClick={() => router.push("/edit")}
           />
 
           {data.user?.image && (
             <div className="relative w-[150px] h-[150px] rounded-full border-2 border-yellow-200 overflow-hidden">
-              <Image src={data.user?.image} fill alt="userImage" />
+              <Image
+                src={data.user?.image}
+                fill alt="userImage"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 150px"
+                className="object-cover"
+              />
             </div>
           )}
 

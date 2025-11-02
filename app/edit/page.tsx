@@ -74,13 +74,21 @@ const Edit = () => {
 
                 <form className="space-y-2 flex flex-col w-full items-center" onSubmit={handleEditSubmit}>
                     <div
-                        className="w-[100px] h-[100px] rounded-full border-2 flex justify-center items-center border-yellow-200 transition-all hover:border-blue-500 text-white hover:text-blue-500 cursor-pointer overflow-hidden relative"
+                        className="w-[150px] h-[150px] rounded-full border-2 flex justify-center items-center border-yellow-200 transition-all hover:border-blue-500 text-white hover:text-blue-500 cursor-pointer overflow-hidden relative"
                         onClick={() => imageInput.current?.click()}
                         onChange={handleImage}
                     >
                         <input type="file" accept="image/*" hidden ref={imageInput} />
 
-                        {frontendImage ? <Image src={frontendImage} fill alt="image" /> : <CgProfile size={22} />}
+                        {frontendImage ? (
+                            <Image
+                                src={frontendImage}
+                                fill
+                                alt="image"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 150px"
+                                className="object-cover"
+                            />
+                        ) : <CgProfile size={22} />}
                     </div>
 
                     <div className="w-full rounded-xl">
