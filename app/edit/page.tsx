@@ -11,7 +11,7 @@ const Edit = () => {
     const data = useContext(userDataContext)
     const [name, setName] = useState("")
     const [frontendImage, setFrontendImage] = useState("")
-    const [backendImage, setBackendImage] = useState<File>(null)
+    const [backendImage, setBackendImage] = useState<File | null>(null)
     const imageInput = useRef<HTMLInputElement>(null)
     const router = useRouter()
     const [loading, setLoading] = useState(false)
